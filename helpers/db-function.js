@@ -5,7 +5,7 @@ const mongodb=require('../config/mongodb');
 module.exports={
 saveFAQ(faq){
     return new Promise((resolve,reject)=>{
-        mongodb.get().collection("Default").insertOne(faq)
+        mongodb.get().collection(process.env.DEFAULT_FAQS).insertOne(faq)
         .then((result) => {
             if(result.acknowledged){
                 resolve(result);
@@ -18,7 +18,7 @@ saveFAQ(faq){
 },
 SaveFAQBn(Bn){
     return new Promise((resolve,reject)=>{
-        mongodb.get().collection("Bangali").insertOne(Bn)
+        mongodb.get().collection(process.env.BENGALI_FAQS).insertOne(Bn)
         .then((result) => {
             if(result.acknowledged){
                 resolve(result);
@@ -30,7 +30,7 @@ SaveFAQBn(Bn){
 },
 SaveFAQHi(Hi){
     return new Promise((resolve,reject)=>{
-        mongodb.get().collection("Hindi").insertOne(Hi)
+        mongodb.get().collection(process.env.HINDI_FAQS).insertOne(Hi)
         .then((result) => {
             if(result.acknowledged){
                 resolve(result);
@@ -42,7 +42,7 @@ SaveFAQHi(Hi){
 },
 getFaqs(language){
     return new Promise(async(resolve,reject)=>{
-        language = language == "en" ? "Default" : language =="bn" ?  "Bangali" : language== "hi"  ? "Hindi" : "Default";
+        language = language == "en" ? "English" : language =="bn" ?  "Bangali" : language== "hi"  ? "Hindi" : "English";
         let FAQS = await mongodb.get()
         .collection(language)
         .find()

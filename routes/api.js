@@ -5,7 +5,7 @@ const { languages } = require("google-translate-api-x");
 var router = express.Router();
 
 // api root
-router.post('/', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.send("hello from api")
 });
 
@@ -13,7 +13,7 @@ router.post('/', function(req, res, next) {
 
 
 //fetch api
-router.post('/faqs', async function (req, res) {
+router.get('/faqs', async function (req, res) {
   
   try {
     let language = req.query.lang || "Default"; 

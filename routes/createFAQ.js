@@ -15,6 +15,8 @@ router.post('/create',function(req, res, next) {
   const tr=faq.transalate();
   Promise.allSettled([save,tr]).then((e)=>{
     res.send(e)
+  }).catch((err)=>{
+    console.log(err)
   });
   }else{
     res.statusMessage = "Qustion and Answer Must Needed On Body";
