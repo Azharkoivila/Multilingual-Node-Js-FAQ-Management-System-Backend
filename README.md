@@ -21,7 +21,7 @@ A robust backend system for managing FAQs with multi-language support, and effic
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/faq-system.git
+git clone [https://github.com/your-username/faq-system.git](https://github.com/Azharkoivila/Multilingual-Node-Js-FAQ-Management-System-Backend)
 cd faq-system
 ```
 
