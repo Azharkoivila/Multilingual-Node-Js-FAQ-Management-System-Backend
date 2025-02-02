@@ -3,10 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const redis=require("./config/redis")
 var api = require('./routes/api');
 var createFAQ = require('./routes/createFAQ');
-let mongodb=require('./config/mongodb')
+let mongodb=require('./config/mongodb');
 var app = express();
 
 
@@ -17,7 +17,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+redis.CreateConnection();
 mongodb.connect();
+
+// app.use((req, res, next) => {
+//   req.redis = client;
+//   console.log(redis)
+//   next();
+// });
+
 app.use('/api/', api);
 app.use('/api/faqs/', createFAQ);
 

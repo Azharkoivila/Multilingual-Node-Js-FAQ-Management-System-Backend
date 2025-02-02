@@ -7,7 +7,7 @@ var router = express.Router();
 
 
 //create FAQ
-router.post('/create',async function(req, res, next) {
+router.post('/create',function(req, res, next) {
   const {question,answer}=req.body;
   if(question && answer){
     let faq=new FAQSchema(question,answer);
@@ -20,7 +20,6 @@ router.post('/create',async function(req, res, next) {
     res.statusMessage = "Qustion and Answer Must Needed On Body";
     res.status(400).end();
   }
- 
 });
 
 
