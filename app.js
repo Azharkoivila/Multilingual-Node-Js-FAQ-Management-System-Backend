@@ -20,11 +20,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 redis.CreateConnection();
 mongodb.connect();
 
-// app.use((req, res, next) => {
-//   req.redis = client;
-//   console.log(redis)
-//   next();
-// });
 
 app.use('/api/', api);
 app.use('/api/faqs/', createFAQ);

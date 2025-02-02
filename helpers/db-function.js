@@ -42,7 +42,7 @@ SaveFAQHi(Hi){
 },
 getFaqs(language){
     return new Promise(async(resolve,reject)=>{
-        language = language == "en" ? "English" : language =="bn" ?  "Bangali" : language== "hi"  ? "Hindi" : "English";
+        language = language == "en" ? "English" : language == "bn" ? "Bengali" : language== "hi"  ? "Hindi" : "English";
         let FAQS = await mongodb.get()
         .collection(language)
         .find()
