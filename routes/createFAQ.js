@@ -16,7 +16,7 @@ router.post('/create',function(req, res, next) {
   Promise.allSettled([save,tr]).then((e)=>{
     res.send(e)
   }).catch((err)=>{
-    console.log(err)
+    res.send(err)
   });
   }else{
     res.statusMessage = "Qustion and Answer Must Needed On Body";
