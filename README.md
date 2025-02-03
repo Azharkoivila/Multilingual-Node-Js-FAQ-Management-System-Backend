@@ -21,7 +21,7 @@ A robust backend system for managing FAQs with multi-language support, and effic
 
 1. Clone the repository:
 ```bash
-git clone [https://github.com/your-username/faq-system.git](https://github.com/Azharkoivila/Multilingual-Node-Js-FAQ-Management-System-Backend)
+git clone (https://github.com/Azharkoivila/Multilingual-Node-Js-FAQ-Management-System-Backend)
 cd faq-system
 ```
 
@@ -53,11 +53,14 @@ npm start
 ## 🔍 API Documentation
 
 ### Create FAQ
-OR You can Use PostMan
+
 
 ```bash
 curl -X POST http://localhost:3000/api/faqs/create/ -H "Content-Type: application/json"   -d '{"question": "What is this?", "answer": "This is a FAQ system"}'
 
+OR-You-can-Use-PostMan
+
+POST /api/faqs/create/ 
 
 Response:
 
